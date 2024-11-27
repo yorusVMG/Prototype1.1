@@ -1,0 +1,36 @@
+<product>
+    <parts>
+        <part>
+            <partIndex>0</partIndex>
+            <id>PA170A011</id>
+            <title>HOEKLIP</title>
+            <description>De prachtige lip houdt
+            het hek zonder enkel
+            probleem in elkaar.</description>
+        </part>
+        <part>
+            <partIndex>1</partIndex>
+            <id>PA170A010</id>
+            <title>GLASPLAAT</title>
+            <description>Mooi glasplaatje hoor
+            zo kan je lekker vanaf je
+            balkon mensen begluren!</description>
+        </part>
+        <part>
+            <partIndex>2</partIndex>
+            <id>PA170A005</id>
+            <title>VOETPLAAT</title>
+            <description>Zie de voetplaat
+            als de voet van het
+            hekwerk die alles draagt</description>
+        </part>
+        <part>
+            <partIndex>3</partIndex>
+            <id>PA170A023</id>
+            <title>EINDLIP</title>
+            <description>Mooie eindlip die
+            je gluurhekje stevig en
+            strak in elkaar houdt </description>
+        </part>
+    </parts>
+</products>
