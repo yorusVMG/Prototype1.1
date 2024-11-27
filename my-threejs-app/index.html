@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VMG 3D Viewer prot</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <img src="Public/Vignette_blauwish_low_opacity.png" class="Vignette"/>
+    <div class="progress-bar-container">
+        <label for="progress-bar">Loading...</label>
+        <img class="LaadschermImg" id="LaadschermImg1" src="Public/Laadscherm/Laadscherm(1).png" style="display: block"/>
+        <img class="LaadschermImg" id="LaadschermImg2" src="Public/Laadscherm/Laadscherm(2).png" style="display: none"/>
+        <img class="LaadschermImg" id="LaadschermImg3" src="Public/Laadscherm/Laadscherm(3).png" style="display: none"/>
+        <img class="LaadschermImg" id="LaadschermImg4" src="Public/Laadscherm/Laadscherm(4).png" style="display: none"/>
+        <img class="LaadschermImg" id="LaadschermImg5" src="Public/Laadscherm/Laadscherm(5).png" style="display: none"/>
+        <img class="LaadschermImg" id="LaadschermImg6" src="Public/Laadscherm/Laadscherm(6).png" style="display: none"/>
+    </div>
+</div>
+
+<div id="WebsiteUI">
+    <div class="UitklapMenu">
+        <ul class="menu">
+            <li class="LijnStyle">
+                <span>Material</span>
+                <ul class="slide">
+                    <li>
+                        <a href="#" class="MateriaalKeuze">Coated</a>
+                        <input class="Pijltje2" type="image" src="Assets/Pijltje.png" alt="Submit feedback">
+                        <ul class="slide2">
+                            <li><a class="aKleur"><input class="KleurSelectie" type="image" src="Assets/Kleur1-8.png"></a></li>
+                            <li><a class="aKleur"><input class="KleurSelectie" type="image" src="Assets/Kleur2-8.png"></a></li>
+                            <li><a class="aKleur"><input class="KleurSelectie" type="image" src="Assets/Kleur3-8.png"></a></li>
+                            <li><a class="aKleur"><input class="KleurSelectie" type="image" src="Assets/Kleur4-8.png"></a></li>
+                            <li><a class="aKleur"><input class="KleurSelectie" type="image" src="Assets/Kleur5-8.png"></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="MateriaalKeuze">Stress</a></li>
+                </ul>
+            </li>
+            <li class="LijnStyle"><span class="BalkOptie">Annotations</span><input type="image" class="TogleA" src="Assets/Oranje_cirkel_vol.png"></li>
+            <li class="LijnStyle"><span class="BalkOptie">Environment</span><input type="image" class="TogleB" src="Assets/Oranje_cirkel_vol.png"></li>
+            <li class="LijnStyle"><span class="BalkOptie" id="Export3D">Export 3D</span></li>
+            <li class="LijnStyle" id="End"><input class="Pijltje" type="image" src="Assets/Pijltje.png" alt="Submit feedback"></li>
+        </ul>
+    </div>    
+    <div class="TaalMenu">
+        <ul class="TaalUl">
+            <a class="Ataal">Taal</a>
+            <input class="TaalPijl" type="image" src="Assets/Pijltje.png">
+            <li><a>Nederlands</a></li>
+            <li><a>Vlaams</a></li>
+            <li><a>Engels</a></li>
+            <li><a>Frans</a></li>
+            <li><a>Duits</a></li>
+        </ul>
+    </div>
+    <div class="ExplodedView">
+        <ul class="ExplodedViewMenu">
+            <a>Exploded view</a>
+            <input type="image" src="Assets/Play_Button.png">       
+        </ul>
+    </div>
+    <img class="Logo" src="Assets/Versteeg_Logo-1.png">
+    <script type="module" src="index.js" ></script>
+    <div class="AnnotationText">
+        <ul>
+            <a id="AnnotationsInfoTitle"></a>
+            <br>
+                <a id="AnnotationsDetails">
+                    
+                </a>
+        </ul>
+    </div>
+</div>
+<canvas id="three-canvas"></canvas>
+</body>
+</html>

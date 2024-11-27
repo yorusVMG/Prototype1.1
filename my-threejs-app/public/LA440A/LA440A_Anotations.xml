@@ -1,0 +1,39 @@
+<product>
+    <parts>
+        <part>
+            <partIndex>0</partIndex>
+            <id>LA440A019</id>
+            <title>HOEKLIP</title>
+            <description>De prachtige lip houdt
+            het hek zonder enkel
+            probleem in elkaar.</description>
+        </part>
+        <part>
+            <partIndex>1</partIndex>
+            <id>LA440A007</id>
+            <title>BALUSTER</title>
+            <description>De baluster zorgt
+            ervoor dat het hele
+            hek sterk staat.
+            In de LA440A is de
+            baluster weggewerkt
+            d.m.v. een lammel</description>
+        </part>
+        <part>
+            <partIndex>2</partIndex>
+            <id>LA440A016</id>
+            <title>VOETPLAAT</title>
+            <description>Zie de voetplaat
+            als de voet van het
+            hekwerk die alles draagt</description>
+        </part>
+        <part>
+            <partIndex>3</partIndex>
+            <id>LA440A011</id>
+            <title>LAMMEL</title>
+            <description>Een lammel zorgt ervoor
+            dat er niemand tussen
+            het hek naar buiten valt.</description>
+        </part>
+    </parts>
+</products>

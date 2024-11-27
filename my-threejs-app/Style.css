@@ -1,0 +1,386 @@
+@font-face {
+    font-family: 'CustomFont'; /* Name your font family */
+    src: url('Public/OpenSans-VariableFont_wdth\,wght.ttf'); /* Locate the .ttf file within your directory*/
+  }
+  
+body {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: CustomFont;
+    margin: 0;
+    z-index: 2;
+    overflow: hidden;
+
+}
+
+#WebsiteUI{
+    display: none;
+}
+
+#three-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10; /* Laag op de pagina */
+}
+
+    .AnnotatiesCheck {
+        font-weight: bold;
+    }
+
+    .annotation, .annotationActive {
+        opacity: 100%;
+        color: rgb(0, 0, 0);
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 0.6vw; 
+        padding: 0.6vw;   
+        position: absolute;
+        background-color: #ffffff;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.20);
+    }
+
+    .annotation:hover{
+        border: 3px solid #f1a71b;
+    }
+
+    .annotationActive{
+        border: 3px solid #f1a71b;
+    }
+
+.text-container p {
+    margin: 0; /* Verwijder standaard marge van paragrafen */
+    padding: 0; /* Verwijder padding om regelafstand te minimaliseren */
+    line-height: 1; /* Zet de regelhoogte gelijk aan de hoogte van de tekstregel */
+}
+
+/* Voeg deze regel toe om andere ongewenste ruimte te voorkomen */
+.text-container span {
+  display: block; /* Zorgt ervoor dat span-elementen als blokken worden weergegeven */
+  margin: 0; /* Verwijder marges van span-elementen */
+  padding: 0; /* Verwijder padding van span-elementen */
+  line-height: 1; /* Zorg ervoor dat de regelhoogte gelijk is aan de teksthoogte */
+}
+
+.progress-bar-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.LaadschermImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 400px;
+    margin-bottom: auto;
+    width: 15%;
+}
+
+#progress-bar{
+    width: 30%;
+    margin-top: 0.5%;
+    height: 2%;
+}
+
+  .Vignette{
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
+
+
+.menu, #menu {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+ul {
+    font-weight: bold;
+    list-style-type: none;
+    padding: 0;
+}
+
+#End {
+    top: 4px;
+    margin-left: 50px;
+}
+
+.TogleA, .TogleB {
+    margin-left: 10px;
+    margin-bottom: -2px;
+}
+
+.Pijltje {
+    height: 15px;
+    width: 8px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.Pijltje2{
+    width: 8px;
+    height: 15px;
+    position: absolute;
+    top: 40px;
+    left: 130px;
+    transform: scaleX(-1);
+}
+
+.LijnStyle {
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: -4px;
+    position: relative;
+    cursor: pointer;
+    
+}
+
+.LijnStyle::after {
+    content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  z-index: 2;
+  background-color: #03247d;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.LijnStyle:nth-child(2)::after {
+    max-width: 100px; /* Maximum breedte voor de derde .LijnStyle */
+}
+
+.LijnStyle:nth-child(3)::after {
+    max-width: 84px; /* Maximum breedte voor de derde .LijnStyle */
+}
+
+.LijnStyle:nth-child(5)::after {
+    max-width: 0px; /* Maximum breedte voor de derde .LijnStyle */
+}
+
+.LijnStyle:hover::after,
+.LijnStyle:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+.LijnStyle:hover .slide {
+    display: block;
+}
+
+.UitklapMenu {
+    background-color: white;
+    height: 50px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 700px;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    box-shadow: 0px 8px 16px rgba(0, 6, 123, 0.05);
+}
+
+/* Verberg de submenu's standaard */
+.slide, .slide2 {
+    display: none;
+}
+
+/* Toon .slide wanneer je over het item "Materiaal" gaat */
+.LijnStyle:hover .slide {
+    display: block;
+}
+
+/* Stijl de eerste dropdown */
+.slide {
+    position: absolute;
+    top: 20px;
+    left: -35px;
+    width: 150px;
+    background: #ffffff;
+    text-align: center;
+    padding-top: 22px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    
+    display: none; /* Verberg standaard */
+    z-index: 1;
+}
+
+/* Toon .slide2 wanneer je over het item "Coated" in de eerste dropdown gaat */
+.slide li:hover .slide2 {
+    display: flex;
+}
+
+/* Positioneer .slide2 horizontaal ten opzichte van het item in .slide */
+.slide2 {
+    position: absolute;
+    top: 22px; /* Zorg ervoor dat het submenu op dezelfde hoogte blijft */
+    left: 148px; /* Plaats .slide2 rechts van het eerste dropdown-menu */
+    width: 290px;
+    background: #ffffff;
+    height: 50px;
+    z-index: 30;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+/* Styling voor .slide en .slide2 items */
+.slide li, .slide2 li {
+    padding: 5px;
+}
+
+.slide li a, .slide2 li a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+}
+
+.slide li a:hover {
+    background-color: #f0f0f0;
+    border-radius: 6px;
+}
+
+a{
+    padding: 10px;
+}
+
+.aKleur{
+    padding: 0px;
+    margin-top: -3px;
+}
+
+.slide2 li .aKleur:hover{
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    top: 0px;
+}
+
+.KleurSelectie{
+    margin-top: 5px;
+    width: 75%;
+    height: 75%;
+}
+
+.TaalMenu{
+    right: 0;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.TaalPijl{
+    width: 10px;
+    height: 18px;
+    transform: rotate(270deg);
+    
+}
+
+.ExplodedView {
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ExplodedViewMenu {
+    padding: 10px;
+    border: 2px solid #f1a71b; /* Border volledig specificeren */
+    width: 180px;
+    margin: 0 auto; /* Centreer horizontaal */
+    border-radius: 25px;
+    
+    
+    /* Centreer verticaal */
+    position: absolute;
+    margin-top: 48px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ExplodedViewMenu:hover{
+    border: 3px solid #f1a71b;
+}
+
+.TaalUl {
+    padding-right: 35px;
+    margin-top: 35px;
+    width: 110px;
+    position: relative; /* Zorgt ervoor dat absolute positionering werkt binnen deze container */
+}
+
+/* Verberg standaard de li-elementen binnen .TaalUl */
+.TaalUl li {
+    display: none; /* Verberg standaard */
+    font-size: 16px;
+    top: 100%; /* Positioneer de li's direct onder .TaalUl */
+    left: 0;
+    z-index: 1;
+}
+
+/* Toon alle li-elementen wanneer je over de ul (.TaalUl) hovert */
+.TaalUl:hover li {
+    display: block;
+}
+
+/* Styling voor de links binnen de li-elementen */
+.TaalUl li a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+}
+
+.TaalUl li a:hover {
+    background-color: rgba(158, 158, 158, 0.1);
+    border-radius: 6px;
+}
+
+.Logo {
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: auto;
+}
+
+.AnnotationText{
+    padding-left: 10px;
+    width: 300px;
+    height: 400px;
+    background-color: #ffffff;
+    border: 10px solid white;
+    z-index: 6;
+    position: absolute;
+    right: 0;
+    top:300px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    box-shadow: 0px 8px 16px rgba(0, 6, 123, 0.1);
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+#AnnotationsInfoTitle{
+    font-weight: bold;
+}
+
+.AnnotationsList{
+    list-style-type: circle;
+    margin-left: 30px;
+    font-weight: normal;
+}
+
